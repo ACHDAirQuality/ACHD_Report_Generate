@@ -150,7 +150,7 @@ For example, you added the NewVariable to the .tex file then, you can use this v
 <img width="1126" alt="image" src="https://user-images.githubusercontent.com/89940553/163883322-599f909d-e334-4f67-8aba-5180fe6bd42d.png">.
 
 
-Please make sure the [data_X07.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/data_X07.tex) is updated, and the NewVariable is inside, or errors might occur.
+Please make sure the [data_X08.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/data_X08.tex) is updated, and the NewVariable is inside, or errors might occur.
 
 ## Resources for LaTex
 
