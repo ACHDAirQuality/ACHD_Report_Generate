@@ -870,9 +870,11 @@ output = paste(output,AQI_LC_tom_Week,sep="\n")
 mode = paste("\\newcommand\\inversionmode{",mode,"}",sep="")
 output = paste(output,mode,sep="\n")
 
+if(h=="09" | h=="08"){
 # write the output to the folder data-raw
-writeLines(output,paste0("data-raw/data_", make.names(h), ".tex"))
-
+writeLines(output,paste0("data-raw/data_", make.names("08"), ".tex"))}
+else{
+writeLines(output,paste0("data-raw/data_", make.names(h), ".tex"))}
 
 
 
