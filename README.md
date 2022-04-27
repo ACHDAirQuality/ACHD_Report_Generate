@@ -22,7 +22,7 @@ Thanks a lot to [Cheng Xu](https://github.com/xu-cheng) for his repo https://git
 * [Resources for LaTex](#resources-for-latex)
 
 ## Files
-<img width="786" alt="image" src="https://user-images.githubusercontent.com/89940553/163876583-0bc90d73-3eec-4903-8ac0-cec3da0523f0.png">
+<img width="824" alt="image" src="https://user-images.githubusercontent.com/104281374/165587890-7aec5943-f33d-4b7f-b42d-05702181c35d.png">
 
 **The files surrounded by red squares are the most important files in this project.**
 
@@ -46,6 +46,10 @@ The workflow files here is controlling the schedules of the tasks.
 - [schedule-commit.yaml](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/.github/workflows/schedule-commit.yaml) is the workflow file for the data scraping process.
 
 **Ideally you do not need to change anything inside these files.** The only thing that you may change in these files is the time the report is updated, which is in the [main.yaml](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/.github/workflows/main.yaml) file.
+
+
+
+
 
 
 ## Possible Errors
