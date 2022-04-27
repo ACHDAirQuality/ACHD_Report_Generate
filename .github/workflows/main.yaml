@@ -6,7 +6,7 @@ on:
 # The workflow schedule is defined by cron expression, e.g.: */4 11-13 * * * means this task will run every 4 minutes
 # between 11-13 am UTC
   schedule:
-    - cron: "*/4 12-13 * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   build:
