@@ -56,13 +56,13 @@ The workflow files here is controlling the schedules of the tasks.
 
 1. **Incorrect / Missing Data**
 
-> Some websites sources we are using might be non-functional on some specific days. If you receive an error message via email, and find that the file [data_X07.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/data_X07.tex) did not update itself or some data is wrong, you may need to modify this file manually. You can manually update the data in the report by editing the file where the data is stored. For details on how to do this, please refer to the [instructions below](#manual-update-example) and the example file we have provided: [example.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/example.tex). 
+> Some websites sources we are using might be non-functional on some specific days. If you receive an error message via email, and find that the file [data_X08.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/data_X08.tex) did not update itself or some data is wrong, you may need to modify this file manually. You can manually update the data in the report by editing the file where the data is stored. For details on how to do this, please refer to the [instructions below](#manual-update-example) and the example file we have provided: [example.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/example.tex). 
 
-> If you change the data in the [data_X07.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/data_X07.tex) file and commit the changes manually, **the github action will run again automatically** with the changes you made. Please wait for a few minutes and check whether [main.pdf](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/gh-pages/main.pdf) is updated or not.
+> If you change the data in the [data_X08.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/data_X08.tex) file and commit the changes manually, **the github action will run again automatically** with the changes you made. Please wait for a few minutes and check whether [main.pdf](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/gh-pages/main.pdf) is updated or not.
 
 ### Manual Update Example
 
-For example, one day you find that the data is not updated for whatever reason. You should first check the documentation in [example.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/example.tex) to remind yourself of the file structure. Then you should change the value in [data_X07.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/data_X07.tex) manually by following the instructions here:
+For example, one day you find that the data is not updated for whatever reason. You should first check the documentation in [example.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/example.tex) to remind yourself of the file structure. Then you should change the value in [data_X08.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/data_X08.tex) manually by following the instructions here:
 
 Firstly, click the little pen on the top right corner to edit the file:
 
