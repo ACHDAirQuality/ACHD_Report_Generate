@@ -67,37 +67,37 @@ For example, one day you find that the data is not updated for whatever reason. 
 Firstly, click the little pen on the top right corner to edit the file:
 
 
-<img width="1288" alt="image" src="https://user-images.githubusercontent.com/89940553/163880549-e02f264c-fe62-408c-8c7d-bd5a74ee998d.png">
+<img width="1300" alt="image" src="https://user-images.githubusercontent.com/104281374/165591375-7250f564-e6d9-47bd-857e-7a10419ccb47.png">
 
 
 Then, change the values inside the {} for each variable that you are trying to change:
 
 
-<img width="1222" alt="image" src="https://user-images.githubusercontent.com/89940553/163880635-f98b339f-e0f9-49bd-a404-ce766af429f4.png">
+<img width="1245" alt="image" src="https://user-images.githubusercontent.com/104281374/165591540-6a98fd96-4c68-4016-8697-fcd0e87a4d66.png">
 
 
 After that, commit the changes by scrolling to the bottom of the website page and clicking on the commit button:
 
 
-<img width="1086" alt="image" src="https://user-images.githubusercontent.com/89940553/163880859-1e58c689-0b2a-47fd-b5f5-f5d6b8c44251.png">
+<img width="1314" alt="image" src="https://user-images.githubusercontent.com/104281374/165591598-effa6d4f-86e7-474c-b313-9eff7fed2779.png">
 
 
 After the changes are commited, in [Github Action](https://github.com/ACHDAirQuality/ACHD_Report_Generate/latex-test/actions), you can see the new tasks:
 
-
-<img width="1317" alt="image" src="https://user-images.githubusercontent.com/89940553/163880923-90bce789-3200-4cd0-a6fe-10fb60deef7d.png">
+<img width="1349" alt="image" src="https://user-images.githubusercontent.com/104281374/165591787-a4bf3dbf-1983-449e-a7bb-ec3e6f7c9f8e.png">
 
 
 After the tasks complete, the report should be updated: 
 
 
-<img width="925" alt="image" src="https://user-images.githubusercontent.com/89940553/163881228-85c6dec9-77f6-4c1a-963b-599a4c6ce064.png">
+<img width="1013" alt="image" src="https://user-images.githubusercontent.com/104281374/165592119-6bfdfe81-94cf-4a08-b878-7c7343d34068.png">
 
+[gh-pages](https://github.com/ACHDAirQuality/ACHD_Report_Generate/tree/gh-pages)
 
 2. **Failed Actions**
 
 > If you see that some github action tasks have failed, you may want to navigate to the [Action Page](https://github.com/ACHDAirQuality/ACHD_Report_Generate/actions), where you can find an error message for each task. For the data scraping tasks, **it is normal to have some failures each day since some of the websites may not always be accessible**. 
-> **The only you only need need to care about is whether [data_X07.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/data_X07.tex) update itself**. If it fails after changing the data manually, double check all the variables and format of everything for any errors.
+> **The only you only need need to care about is whether [data_X08.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/data_X08.tex) update itself**. If it fails after changing the data manually, double check all the variables and format of everything for any errors.
 
 
 ### Failed Actions Example
@@ -118,7 +118,7 @@ The error message could be found as follow, firstly click on [Github Action](htt
 <img width="669" alt="image" src="https://user-images.githubusercontent.com/89940553/163881800-4a303ead-dd7c-40f8-9cf0-ca8fa349880b.png">
 
 
-If the error messages are related to connections, for example "port 443", 503, 504, then you should check whether [data_X07.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/data_X07.tex) is updated or not, if it is updated normally, then in most of the case, the report would be fine.
+If the error messages are related to connections, for example "port 443", 503, 504, then you should check whether [data_X08.tex](https://github.com/ACHDAirQuality/ACHD_Report_Generate/blob/master/data-raw/data_X08.tex) is updated or not, if it is updated normally, then in most of the case, the report would be fine.
 
 ## Guidance for Adding New Functionality
 
