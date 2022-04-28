@@ -872,8 +872,8 @@ output = paste(output,mode,sep="\n")
 
 if(h=="09" | h=="08"){
 # write the output to the folder data-raw
-writeLines(output,paste0("data-raw/data_", make.names("08"), ".tex"))}
-else{
+writeLines(output,paste0("data-raw/data_", make.names("08"), ".tex"))
+}else{
 writeLines(output,paste0("data-raw/data_", make.names(h), ".tex"))}
 
 
