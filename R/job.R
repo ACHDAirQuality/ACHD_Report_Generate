@@ -153,6 +153,8 @@ if(is_empty(todayforecast)==FALSE){
   todayforecast = strsplit(todayforecast, "\r\n")
   todayforecast = todayforecast[[1]][2]
   todayforecast = gsub("  ","",todayforecast)
+  todayforecast = gsub("â","",todayforecast)
+  todayforecast = gsub("\u0080\u0099","'",todayforecast)
 } else{
   todayforecast<-"--"
 }
