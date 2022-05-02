@@ -475,7 +475,7 @@ upperinversion<-function(x){
 # Combine the columns into a new table, and remove the first row since it has no temperature value
 if (is_empty(table5)==FALSE){
   fiveextract<-str_extract_all(table5,'\\n.{22}')
-  fivenum<-fiveextract[[1]][-c(1:4)]
+  fivenum<-fiveextract[[1]][-c(1:4,length(fiveextract[[1]]))]
   digits<-trimws(substr(fivenum,3,22),which=c("left"))
   digitssplit<-str_extract_all(digits,'.{1}\\d{1,}.{1}\\d|\\d{1,}.{1}\\d')
   pressure<-lapply(digitssplit,`[[`,1) 
