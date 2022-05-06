@@ -447,17 +447,19 @@ fivestrength<-function(x){
 upperinversion<-function(x){
   diffx<-diff(x)
   afterfirstnegative<-which(diffx<0)
-  if(is.na(afterfirstnegative)[1]==TRUE){ # Not sure if this should be is.na or is_empty
+  if((is.na(afterfirstnegative)[1]|is_empty(afterfirstnegative))==TRUE){
     return("No upper inversion starting below ~1000 m is reported")
+    break
   } else{
     pastfirstnegative<-diffx[afterfirstnegative[1]:length(diffx)]
     nextpositive<-which(pastfirstnegative>0)
-    if(is.na(nextpositive)[1]==TRUE){
+    if((is.na(nextpositive)[1]|is_empty(nextpositive))==TRUE){
       return("No upper inversion starting below ~1000 m is reported")
+      break
     } else {
       pastnextpositive<-diffx[nextpositive[1]:length(diffx)]
       inversionnegative<-which(pastnextpositive<0)
-      if(is.na(inversionnegative)[1]==TRUE){
+      if((is.na(inversionnegative)[1]|is_empty(inversionnegative))==TRUE){
         return("No upper inversion starting below ~1000 m is reported")
       } else {
         return("Yes, an upper inversion starting below ~1000 m is reported")
@@ -478,6 +480,7 @@ if (is_empty(table5)==FALSE){
   fiveextract<-str_extract_all(table5,'\\n.{22}')
   fivenum<-fiveextract[[1]][-c(1:4,length(fiveextract[[1]]))]
   digits<-trimws(substr(fivenum,3,22),which=c("left"))
+  digits<-digits[-1] # Remove first row, no useful info and can be sometimes empty
   digitssplit<-str_extract_all(digits,'.{1}\\d{1,}.{1}\\d|\\d{1,}.{1}\\d')
   pressure<-lapply(digitssplit,`[[`,1) 
   height<-lapply(digitssplit,`[[`,2)
@@ -485,7 +488,6 @@ if (is_empty(table5)==FALSE){
   temperature<-lapply(digitssplit,`[[`,3)
   five<-cbind(as.numeric(pressure),as.numeric(height),as.numeric(temperature))
   colnames(five)<-c("Pressure (hPa)","Height (m)","Temperature (C)")
-  five<-five[-1,]
   
   # Calculation for Surface Inversion Strength and Inversion Depth
   # This code looks for the first "peak" in the temperature and subtracts it from the surface temperature to get Surface Inversion Strength
