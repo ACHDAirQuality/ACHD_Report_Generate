@@ -442,22 +442,22 @@ fivestrength<-function(x){
   } else return("Strong")
 }
 
-  # Function that will be used later to determininw if there are any upper inversions below 1000m
+  # Function that will be used later to determine if there are any upper inversions below 1000m
   # This calculates if there are any inversions that don't start at surface level
 upperinversion<-function(x){
   diffx<-diff(x)
   afterfirstnegative<-which(diffx<0)
-  if(is_empty(afterfirstnegative)==TRUE){
+  if(is.na(afterfirstnegative)[1]==TRUE){ # Not sure if this should be is.na or is_empty
     return("No upper inversion starting below ~1000 m is reported")
   } else{
     pastfirstnegative<-diffx[afterfirstnegative[1]:length(diffx)]
     nextpositive<-which(pastfirstnegative>0)
-    if(is_empty(nextpositive)==TRUE){
+    if(is.na(nextpositive)[1]==TRUE){
       return("No upper inversion starting below ~1000 m is reported")
     } else {
       pastnextpositive<-diffx[nextpositive[1]:length(diffx)]
       inversionnegative<-which(pastnextpositive<0)
-      if(is_empty(inversionnegative)==TRUE){
+      if(is.na(inversionnegative)[1]==TRUE){
         return("No upper inversion starting below ~1000 m is reported")
       } else {
         return("Yes, an upper inversion starting below ~1000 m is reported")
