@@ -483,7 +483,6 @@ if (is_empty(table5)==FALSE){
   digitssplit<-str_extract_all(digits,'.{1}\\d{1,}.{1}\\d|\\d{1,}.{1}\\d')
   pressure<-lapply(digitssplit,`[[`,1) 
   height<-lapply(digitssplit,`[[`,2)
-  digitssplit[[1]][3]<-""
   temperature<-lapply(digitssplit,`[[`,3)
   five<-cbind(as.numeric(pressure),as.numeric(height),as.numeric(temperature))
   colnames(five)<-c("Pressure (hPa)","Height (m)","Temperature (C)")
