@@ -444,7 +444,7 @@ fivestrength<-function(x){
   # Function that will be used later to determine if there are any upper inversions below 1000m
   # This calculates if there are any inversions that don't start at surface level
 upperinversion<-function(x){
-  diffx<-diff(x)
+  diffx<-diff(unlist(x))
   afterfirstnegative<-which(diffx<0)
   if((is.na(afterfirstnegative)[1]|is_empty(afterfirstnegative))==TRUE){
     return("No upper inversion starting below ~1000 m is reported")
