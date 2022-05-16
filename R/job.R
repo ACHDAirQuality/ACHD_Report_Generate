@@ -456,13 +456,7 @@ upperinversion<-function(x){
       return("No upper inversion starting below ~1000 m is reported")
       break
     } else {
-      pastnextpositive<-diffx[nextpositive[1]:length(diffx)]
-      inversionnegative<-which(pastnextpositive<0)
-      if((is.na(inversionnegative)[1]|is_empty(inversionnegative))==TRUE){
-        return("No upper inversion starting below ~1000 m is reported")
-      } else {
-        return("Yes, an upper inversion starting below ~1000 m is reported")
-      }
+      return("Yes, an upper inversion starting below ~1000 m is reported")
     }
   }
 }
