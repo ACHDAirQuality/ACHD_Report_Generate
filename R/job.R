@@ -168,7 +168,7 @@ if(is_empty(todayforecast)==FALSE){
 # Better be scraped in a fixed time daily(e.g.: 8:30 am)
 # --------------------------------------------------------------------------------------------------------------------------------------
 
-webpage4 <- tryCatch(read_html("https://forecast.weather.gov/MapClick.php?lat=40.427&lon=-80.0107&lg=english&&FcstType=digital"),error=function(y){return(c())})
+webpage4 <- tryCatch(read_html("https://forecast.weather.gov/MapClick.php?w0=t&w1=td&w2=wc&w3=sfcwind&w3u=1&w4=sky&w5=pop&w6=rh&w7=rain&w8=thunder&w9=snow&w10=fzg&w11=sleet&w13u=0&w16u=1&w17u=1&AheadHour=%22,9-time,%22&Submit=Submit&FcstType=digital&textField1=40.427&textField2=-80.0107&site=all&unit=0&dd=&bw="),error=function(y){return(c())})
 date = as.character(Sys.Date())
 date = strsplit(date,"-")
 date = paste(date[[1]][2],date[[1]][3],sep="/")
