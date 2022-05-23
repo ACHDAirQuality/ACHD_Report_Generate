@@ -172,14 +172,17 @@ webpage4 <- tryCatch(read_html("https://forecast.weather.gov/MapClick.php?lat=40
 date = as.character(Sys.Date())
 date = strsplit(date,"-")
 date = paste(date[[1]][2],date[[1]][3],sep="/")
+
 if(is_empty(webpage4)==FALSE){
   p2 <- webpage4 %>%
     html_nodes(xpath="/html/body/table[6]/tr/td") %>%
     html_text()
+  time = p2[28]
 } else {
   p2<-c()
 }
 if(is_empty(p2)==FALSE){
+  
   todaymorningwind = "--"
   todayafternoonwind = "--"
   todayeveningwind = "--"
