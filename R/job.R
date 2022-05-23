@@ -177,7 +177,7 @@ if(is_empty(webpage4)==FALSE){
   p2 <- webpage4 %>%
     html_nodes(xpath="/html/body/table[6]/tr/td") %>%
     html_text()
-  time = p2[28]
+  time = as.numeric(p2[28])
 } else {
   p2<-c()
 }
