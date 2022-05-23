@@ -172,17 +172,22 @@ webpage4 <- tryCatch(read_html("https://forecast.weather.gov/MapClick.php?lat=40
 date = as.character(Sys.Date())
 date = strsplit(date,"-")
 date = paste(date[[1]][2],date[[1]][3],sep="/")
-
 if(is_empty(webpage4)==FALSE){
   p2 <- webpage4 %>%
     html_nodes(xpath="/html/body/table[6]/tr/td") %>%
     html_text()
-  time = as.numeric(p2[28])
 } else {
   p2<-c()
 }
 if(is_empty(p2)==FALSE){
-  
+  p2 = p2[-c(1,402)]
+  dim(p2) = c(25,32)
+  p2 = t(p2)
+  booldate = FALSE
+  if(p2[1,2]==date){
+    booldate = TRUE
+  }
+  time = as.numeric(p2[2,2])# this time need to be <=9, which means this code should be run before 9am everyday
   todaymorningwind = "--"
   todayafternoonwind = "--"
   todayeveningwind = "--"
@@ -210,7 +215,7 @@ if (is_empty(webpage4_1)==FALSE){
   p4_1<-c()
 }
 
-if(is_empty(p4_1)==FALSE & length(p4_1)==802){
+if(is_empty(p4_1)==FALSE){
   p4_1 = p4_1[-c(1,402)]
   dim(p4_1) = c(25,32)
   p4_1 = t(p4_1)
@@ -234,68 +239,9 @@ if (is_empty(webpage4_2)==FALSE){
   p4_2<-c()
 }
 
-if(is_empty(p4_2)==FALSE &  length(p4_2)==802){
+if(is_empty(p4_2)==FALSE){
   p4_2 = p4_2[-c(1,402)]
   dim(p4_2) = c(25,32)
-  p4_2 = t(p4_2)
-  if(max(as.numeric(p4_2[6,2:5])>=max(as.numeric(p4_1[6,24:25])))){
-  tomorrowmorningwind = paste(p4_2[7,1+which.max(as.numeric(p4_2[6,2:5]))],p4_2[6,1+which.max(as.numeric(p4_2[6,2:5]))],sep=" - ")
-  }
-  else{
-    tomorrowmorningwind = paste(p4_1[7,23+which.max(as.numeric(p4_1[6,24:25]))],p4_1[6,23+which.max(as.numeric(p4_1[6,24:25]))],sep=" - ")
-  }
-  
-  tomorrowafternoonwind = paste(p4_2[7,5+which.max(as.numeric(p4_2[6,6:11]))],p4_2[6,5+which.max(as.numeric(p4_2[6,6:11]))],sep=" - ")
-} else {
-  tomorrowmorningwind<-"--"
-  tomorrowafternoonwind<-"--"
-}
-
-
-if(is_empty(p4_2)==FALSE &  length(p4_2)!=802){
-  p4_2 = p4_2[-c(1,327)]
-  dim(p4_2) = c(25,26)
-  p4_2 = t(p4_2)
-  if(max(as.numeric(p4_2[6,2:5])>=max(as.numeric(p4_1[6,24:25])))){
-  tomorrowmorningwind = paste(p4_2[7,1+which.max(as.numeric(p4_2[6,2:5]))],p4_2[6,1+which.max(as.numeric(p4_2[6,2:5]))],sep=" - ")
-  }
-  else{
-    tomorrowmorningwind = paste(p4_1[7,23+which.max(as.numeric(p4_1[6,24:25]))],p4_1[6,23+which.max(as.numeric(p4_1[6,24:25]))],sep=" - ")
-  }
-  
-  tomorrowafternoonwind = paste(p4_2[7,5+which.max(as.numeric(p4_2[6,6:11]))],p4_2[6,5+which.max(as.numeric(p4_2[6,6:11]))],sep=" - ")
-} else {
-  tomorrowmorningwind<-"--"
-  tomorrowafternoonwind<-"--"
-}
-
-if(is_empty(p4_1)==FALSE & length(p4_1)!=802){
-  p4_1 = p4_1[-c(1,327)]
-  dim(p4_1) = c(25,26)
-  p4_1 = t(p4_1)
-  
-  todaymorningwind = paste(p4_1[7,1+which.max(as.numeric(p4_1[6,2:5]))],p4_1[6,1+which.max(as.numeric(p4_1[6,2:5]))],sep=" - ")
-  todayafternoonwind = paste(p4_1[7,5+which.max(as.numeric(p4_1[6,6:11]))],p4_1[6,5+which.max(as.numeric(p4_1[6,6:11]))],sep=" - ")
-  todayeveningwind = paste(p4_1[7,11+which.max(as.numeric(p4_1[6,12:17]))],p4_1[6,11+which.max(as.numeric(p4_1[6,12:17]))],sep=" - ")
-  todayovernightwind = paste(p4_1[7,17+which.max(as.numeric(p4_1[6,18:23]))],p4_1[6,17+which.max(as.numeric(p4_1[6,18:23]))],sep=" - ")
-} else{
-  todaymorningwind<-"--"
-  todayafternoonwind<-"--"
-  todayeveningwind<-"--"
-  todayovernightwind<-"--"
-}
-webpage4_2=tryCatch(read_html(web4_2),error=function(y){return(c())})
-if (is_empty(webpage4_2)==FALSE & length(p4_2)!=802){
-  p4_2 <- webpage4_2 %>%
-    html_nodes(xpath="/html/body/table[6]/tr/td") %>%
-    html_text()
-} else {
-  p4_2<-c()
-}
-
-if(is_empty(p4_2)==FALSE &  length(p4_2)!=802){
-  p4_2 = p4_2[-c(1,327)]
-  dim(p4_2) = c(25,26)
   p4_2 = t(p4_2)
   if(max(as.numeric(p4_2[6,2:5])>=max(as.numeric(p4_1[6,24:25])))){
   tomorrowmorningwind = paste(p4_2[7,1+which.max(as.numeric(p4_2[6,2:5]))],p4_2[6,1+which.max(as.numeric(p4_2[6,2:5]))],sep=" - ")
